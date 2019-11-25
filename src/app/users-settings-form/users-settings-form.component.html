@@ -3,10 +3,10 @@
     <form #form="ngForm">
         <div class="form-group">
             <label for="name">Name</label>
-            <input ngModel id="name" name="name" class="form-control" type="text">
+            <input [(ngModel)]="userSettings.name" id="name" name="name" class="form-control" type="text">
         </div>
         <div class="form-check form-group">
-            <input ngModel type="checkbox" class="form-check-input" id="emailOffers" name="emailOffers">
+            <input [(ngModel)]="userSettings.emailOffers" type="checkbox" class="form-check-input" id="emailOffers" name="emailOffers">
             <label for="emailOffers" class="form-check-label">
                 Email Special Offers
             </label>
@@ -14,19 +14,19 @@
         <p>User Interface Style</p>
         <div class="form-group">
             <div class="form-check">
-                <input ngModel type="radio" class="form-check-input" id="lightInterface" value="light" name="interfaceStyle" checked>
+                <input [(ngModel)]="userSettings.interfaceStyle" type="radio" class="form-check-input" id="lightInterface" value="light" name="interfaceStyle" checked>
                 <label class="form-check-label" for="lightInterface">
                     Light
                 </label>
             </div>
             <div class="form-check">
-                <input ngModel type="radio" class="form-check-input" id="mediumInterface" value="medium"  name="interfaceStyle">
+                <input [(ngModel)]="userSettings.interfaceStyle" type="radio" class="form-check-input" id="mediumInterface" value="medium"  name="interfaceStyle">
                 <label class="form-check-label" for="mediumInterface">
                     Medium
                 </label>
             </div>
             <div class="form-check">
-                <input ngModel type="radio" class="form-check-input" id="darkInterface" value="dark"  name="interfaceStyle">
+                <input [(ngModel)]="userSettings.interfaceStyle" type="radio" class="form-check-input" id="darkInterface" value="dark"  name="interfaceStyle">
                 <label class="form-check-label" for="darkInterface">
                     Dark
                 </label>
@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="subscriptionType">Subscription Type</label>
-            <select ngModel name="subscriptionType" id="subscriptionType" class="form-control">
+            <select [(ngModel)]="userSettings.subscriptionType" name="subscriptionType" id="subscriptionType" class="form-control">
                 <option>Monthly</option>
                 <option>Annual</option>
                 <option>Lifetime</option>
@@ -42,7 +42,7 @@
         </div>
         <div class="form-group">
             <label for="notes">Notes</label>
-            <textarea ngModel name="notes" id="notes" rows="3" class="form-control"></textarea>
+            <textarea [(ngModel)]="userSettings.notes" name="notes" id="notes" rows="3" class="form-control"></textarea>
         </div>
  
         <button class="btn btn-primary">Send</button>
