@@ -47,16 +47,26 @@
       <label for="subscriptionType">Subscription Type</label>
       <select [(ngModel)]="userSettings.subscriptionType" name="subscriptionType" id="subscriptionType"
         class="form-control">
-        <option>Monthly</option>
+        <!-- using async: This will wait until the observable is completed before building up the options -->
+        <option *ngFor="let type of subscriptionTypes | async">
+          {{ type }}
+        </option>
+        <!-- <option>Monthly</option>
         <option>Annual</option>
-        <option>Lifetime</option>
+        <option>Lifetime</option> -->
       </select>
     </div>
+
+    {{subscriptionTypes | json}}
+
     <div class="form-group">
       <label for="notes">Notes</label>
       <textarea [(ngModel)]="userSettings.notes" name="notes" id="notes" rows="3" class="form-control"></textarea>
     </div>
-
+    <div [hidden]="!postError"
+         class="alert alert-danger">
+      {{ postErrorMessage }}
+    </div>
     <button class="btn btn-primary">Send</button>
   </form>
 </div>
