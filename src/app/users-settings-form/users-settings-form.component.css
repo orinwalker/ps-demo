@@ -1,0 +1,9 @@
+/* ensure selector ignores form */
+/* .ng-invalid:not(form).ng-touched
+{
+  border: 1px solid red;
+} */
+
+.field-error {
+  border: 3px solid red;
+}
